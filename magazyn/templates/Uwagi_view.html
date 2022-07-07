@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for data in object_list %}
+
+<table class="table"> <h3><strong>{{data.kurnik}}</strong></h3> <h4>{{data.data}}</h4><br>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Uwagi</th>
+      <th scope="col">Upadki</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{data.Uwagi}}</td>
+      <td>{{data.upadki}}</td>
+    </tr>
+{% endfor %}
+{%endblock %}
+  </tbody>
+    </table>

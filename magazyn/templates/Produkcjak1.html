@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+        {% if user.is_authenticated %}
+{% block content %}
+<h1>Produkcja jaj</h1>
+<br/>
+<div class="form-group">
+<form method="POST">
+{% csrf_token%}
+    {{form.as_p}}
+    <button class="btn btn-success">Dodaj</button>
+</form>
+
+</div>
+
+{% endblock %}
+{%endif%}

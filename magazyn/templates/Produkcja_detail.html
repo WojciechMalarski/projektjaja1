@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+
+<h1> <a href="{%url 'zamowienie_detail' object.id%}"></a>{{object.klient.Imie}}</h1>

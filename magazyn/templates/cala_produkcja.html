@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load i18n %}
+
+        {% for data in object_list %}
+
+<h2><strong>{{data.Kurnik}}</strong></h2> <h2><strong>{{data.Dataprodukcji }}</strong></h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nazwa</th>
+      <th scope="col">Ilość</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>SS</td>
+      <td>{{data.IloscSS}}</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>S</td>
+      <td>{{data.IloscS}}</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>1A</td>
+      <td>{{data.Ilosc1A}}</td>
+    </tr>
+      <tr>
+      <th scope="row">4</th>
+      <td>1B</td>
+      <td>{{data.Ilosc1B}}</td>
+    </tr>
+      <tr>
+      <th scope="row">5</th>
+      <td>2A</td>
+      <td>{{data.Ilosc2A}}</td>
+    </tr>
+      <tr>
+      <th scope="row">6</th>
+      <td>2B</td>
+      <td>{{data.Ilosc2B}}</td>
+      </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+    </tr>
+
+        <tr>
+      <th scope="row">7</th>
+          <td><strong>łącznie wyprodukowano</strong></td>
+      <td><strong>{{data.Sumaprodukcji}}</strong></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+        {%endfor %}
+
+{%endblock %}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wszystkie zamówienia</title>
+</head>
+<body>
+
+{% block content %}
+
+        {% for data in object_list %}
+<table>
+    <tr><strong> <a href="{%url 'zamowienie_detail' data.pk%}">{{data.klient.Imie}}  {{data.klient.Nazwisko}}</a> </strong>{{data.DataZamowienia}}
+      <th>Nazwa</th>
+        <td></td>
+      <th>Ilość</th>
+
+
+  </tr>
+  <tr>
+    <td>SS</td>
+      <td></td>
+    <td>{{data.IloscSS}}</td>
+
+
+  </tr>
+  <tr>
+    <td>S</td>
+      <td></td>
+    <td>{{data.IloscS}}</td>
+
+  </tr>
+      <tr>
+    <td>1A</td>
+          <td></td>
+    <td>{{data.Ilosc1A}}</td>
+
+
+    <tr>
+    <td>1B</td>
+    <td></td>
+    <td>{{data.Ilosc1B}}</td>
+    </tr>
+
+      <tr>
+    <td>2A</td>
+    <td></td>
+    <td>{{data.Ilosc2A}}</td>
+
+  </tr>
+</table>
+</br>
+</br>
+</br>
+    {% endfor %}
+</body>
+
+    {% endblock %}
+
+</html>

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+    {% block content %}
+<body>
+
+<h1> <a href="{%url 'zamowienie_detail' object.id%}"></a>{{object.klient.Imie}}</h1>
+
+
+<table>
+      <th>Nazwa</th>
+      <th>Ilość</th>
+      <th>Cena</th>
+      <th>Suma</th>
+
+  <tr>
+    <td>SS</td>
+    <td>{{object.IloscSS}}</td>
+    <td>{{object.CenaSS}}</td>
+      <td>{{object.SumaSS}}</td>
+  </tr>
+  <tr>
+    <td>S</td>
+    <td>{{object.IloscS}}</td>
+    <td> {{object.CenaS}}</td>
+      <td>      {{object.SumaS}}</td>
+  </tr>
+      <tr>
+    <td>1A</td>
+    <td>{{object.Ilosc1A}}</td>
+    <td>{{object.Cena1A}}</td>
+      <td>{{object.Suma1A}}</td>
+    <tr>
+    <td>1B</td>
+    <td>{{object.Ilosc1B}}</td>
+    <td>{{object.Cena1B}}</td>
+      <td>{{object.Suma1B}}</td>
+      <tr>
+    <td>2A</td>
+    <td>{{object.Ilosc2A}}</td>
+    <td>{{object.Cena2A}}</td>
+    <td>{{object.Suma2A}}</td>
+  </tr>
+
+    <tr>
+    <td>Do zapłaty</td>
+    <td></td>
+    <td></td>
+
+  <td><strong>{{object.Sumaogolna}}</strong></td>
+  </tr>
+
+</table>
+<a href="{% url 'delete_zamowienie' object.id %}" class="btn btn-secondary">Usuń</a>
+</br>
+</br>
+</br>
+
+
+<br/>
+
+
+<br/><br/>
+<a href="{% url 'index' %}" class="btn btn-secondary">Powrót</a>
+
+    {% endblock %}
+</body>
+</html>
