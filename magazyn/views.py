@@ -38,7 +38,7 @@ class ProdukcjaK1(CreateView):
     model = KurnikProdukcja
     form_class = ProdukcjaForm
     template_name = 'Produkcjak1.html'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('cala_produkcja')
 
 class ProdukcjaView(ListView):
     model = KurnikProdukcja
