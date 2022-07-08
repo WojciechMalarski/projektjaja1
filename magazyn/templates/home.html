@@ -9,6 +9,7 @@
 
 {% block content %}
         {% if user.is_authenticated %}
+                    {% if user.id == 1 %}
         {% for data in object_list %}
 <table>
     <tr><strong> <a href="{%url 'zamowienie_detail' data.pk%}">{{data.klient.Imie}}  {{data.klient.Nazwisko}}</a> </strong>{{data.DataZamowienia}}
@@ -56,6 +57,7 @@
     {% endfor %}
 </body>
 {%endif%}
-    {% endblock %}
+{%endif%}
+{% endblock %}
 
 </html>
