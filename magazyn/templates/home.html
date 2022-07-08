@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+
 {% extends 'base.html' %}
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <title>Wszystkie zamówienia</title>
@@ -8,7 +8,7 @@
 <body>
 
 {% block content %}
-
+        {% if user.is_authenticated %}
         {% for data in object_list %}
 <table>
     <tr><strong> <a href="{%url 'zamowienie_detail' data.pk%}">{{data.klient.Imie}}  {{data.klient.Nazwisko}}</a> </strong>{{data.DataZamowienia}}
@@ -55,7 +55,7 @@
 </br>
     {% endfor %}
 </body>
-
+{%endif%}
     {% endblock %}
 
 </html>

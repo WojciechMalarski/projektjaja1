@@ -16,7 +16,7 @@ class AddZamowienie(CreateView):
     model = Suma
     form_class = ZamowienieForm
     template_name = 'add_zamowienie.html'
-    success_url = reverse_lazy('zamowienie_detail')
+    success_url = reverse_lazy('index')
 
 class ZamowienieDetail(DetailView):
     model = Suma
