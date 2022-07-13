@@ -17,8 +17,8 @@ def get_plot(x,y):
     plt.title('Ilość Produkcji,Data')
     plt.plot(x,y)
     plt.xticks(rotation=45)
-    plt.xlabel('Ilość')
-    plt.ylabel('Data')
+    plt.xlabel('Data')
+    plt.ylabel('Ilość')
     plt.tight_layout()
 
     graph = get_graph()
