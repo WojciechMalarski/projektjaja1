@@ -10,6 +10,7 @@ Kurnik_Choices = (
     ('Kurnik K3',"Kurnik K3"),
 )
 class KurnikProdukcja(models.Model):
+
     Kurnik = models.CharField(max_length=10,choices=Kurnik_Choices,default="Kurnik K3")
     IloscSS = models.FloatField(default=0)
     IloscS = models.FloatField(default=0)

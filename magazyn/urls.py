@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import AddZamowienie,index, AddKlient, ZamowienieDetail,Deletezamowienie,ProdukcjaK1, ProdukcjaView, UwagiCreateView,UwagiView
+from .views import AddZamowienie,index, AddKlient, ZamowienieDetail,Deletezamowienie,ProdukcjaK1, ProdukcjaView, UwagiCreateView,UwagiView, Statystyka_View
 urlpatterns = [
     # ex: /polls/
     path('', index.as_view(), name='index'),
@@ -11,4 +11,5 @@ urlpatterns = [
     path('calaprodukcja/',ProdukcjaView.as_view(), name='cala_produkcja'),
     path('uwagi_upadki/',UwagiCreateView.as_view(), name='uwagi_upadki'),
     path('uwagi_view/',UwagiView.as_view(), name='uwagi_view'),
+    path('statystyka/',Statystyka_View, name='statystyka_view'),
     ]

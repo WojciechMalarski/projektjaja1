@@ -16,7 +16,6 @@
   <body>
       <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
       <div class="container">
       <ul class="nav">
         <li><a class="navbar-brand">Witaj {{user.username}}</a></li>
@@ -24,32 +23,34 @@
                     {% if user.id == 1 %}
 
         <li class="nav-item">
-         <a class="navbar-brand"  href="{% url 'index' %}">Zamówienia</a>
+          <a class="btn btn-dark"    role="button" aria-expanded="false" aria-controls="collapseExample"  href="{% url 'index' %}">Zamówienia</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{%url 'add_zamowienie'%}">Dodaj Zamówienie</a>
+          <a class="btn btn-dark"   role="button" href="{%url 'add_zamowienie'%}">Dodaj Zamówienie</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{%url 'add_klient'%}">Dodaj Klienta</a>
+         <a class="btn btn-dark"  role="button" href="{%url 'add_klient'%}">Dodaj Klienta</a>
         </li>
         <li class="nav-item">
 
-          <a class="nav-link" href="{%url 'cala_produkcja'%}">Przeglad Produkcji</a>
+          <a class="btn btn-dark"    role="button" href="{%url 'cala_produkcja'%}">Przeglad Produkcji</a>
         </li>
                         {%endif%}
         <li class="nav-item">
-          <a class="nav-link" href="{%url 'produkcja_k1'%}">Produkcja K1/K3</a>
+          <a class="btn btn-dark"    role="button" href="{%url 'produkcja_k1'%}">Produkcja K1/K3</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{%url 'uwagi_upadki'%}">Uwagi/Upadki</a>
+          <a class="btn btn-dark"    role="button" href="{%url 'uwagi_upadki'%}">Uwagi/Upadki</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{%url 'uwagi_view'%}">Przegląd Uwag/Upadków</a>
+          <a class="btn btn-dark"   role="button" href="{%url 'uwagi_view'%}">Przegląd Uwag/Upadków</a>
 
         </li>
-
+        <li class="nav-item">
+          <a class="nav-link" href="{%url 'statystyka_view'%}">Statystyka</a>
+        </li>
             <li class="nav-item">
-          <a class="nav-link" href="{%url 'logout'%}">Wyloguj</a>
+          <a class="btn btn-dark"    role="button" href="{%url 'logout'%}">Wyloguj</a>
         </li>
       {%else%}
 

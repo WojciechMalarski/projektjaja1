@@ -3,6 +3,7 @@ from .models import Suma, Klient, KurnikProdukcja, Uwagi
 from django.views.generic import ListView,DetailView, CreateView,UpdateView,DeleteView
 from .forms import ZamowienieForm, KlientForm, ProdukcjaForm,UwagiForm
 from django.urls import reverse_lazy
+from .utils import get_plot
 
 # Create your views here.
 
@@ -55,3 +56,13 @@ class UwagiView(ListView):
     model = Uwagi
     template_name = 'Uwagi_view.html'
     ordering = ['-id']
+
+def Statystyka_View(request):
+    qs = KurnikProdukcja.objects.all()
+
+    x = [x.Dataprodukcji for x in qs]
+    y =[y.Sumaprodukcji for y in qs]
+    chart = get_plot(x,y)
+    return render(request, 'statystyka.html', {'chart':chart})
+
+
