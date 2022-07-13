@@ -14,11 +14,11 @@ def get_graph():
 def get_plot(x,y):
     plt.switch_backend('AGG')
     plt.figure(figsize=(10,5))
-    plt.title('SS,1A')
+    plt.title('Ilość Produkcji,Data')
     plt.plot(x,y)
     plt.xticks(rotation=45)
-    plt.xlabel('S')
-    plt.ylabel('1A')
+    plt.xlabel('Ilość')
+    plt.ylabel('Data')
     plt.tight_layout()
 
     graph = get_graph()
