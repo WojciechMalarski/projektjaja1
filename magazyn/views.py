@@ -62,7 +62,9 @@ def Statystyka_View(request):
 
     x = [x.Dataprodukcji for x in qs]
     y =[y.Sumaprodukcji for y in qs]
+
     chart = get_plot(x,y)
     return render(request, 'statystyka.html', {'chart':chart})
+
 
 
