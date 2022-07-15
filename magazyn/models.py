@@ -1,3 +1,5 @@
+import math
+
 import django.utils.timezone
 from django.db import models
 from datetime import date
@@ -26,7 +28,24 @@ class KurnikProdukcja(models.Model):
     def save(self, *args, **kwargs):
 
         self.Sumaprodukcji = self.IloscSS + self.IloscS +self.Ilosc1A + self.Ilosc1B +self.Ilosc2A + self.Ilosc2B
-        self.Sumaprodukcji= round( self.Sumaprodukcji,1)
+        dec,whole = math.modf(self.Sumaprodukcji)
+        if dec<0.12:
+            whole = whole
+            dec1 = dec
+        if dec>=0.12 and dec <0.24:
+            whole = whole+1
+            dec1 = dec%0.12
+        elif dec>=0.24 and dec <0.36:
+            whole = whole+2
+            dec1 = dec%0.12
+        elif dec>=0.36 and dec <0.48:
+            whole = whole+3
+            dec1 = dec%0.12
+        elif dec>=0.48 and dec <0.60:
+            whole = whole+4
+            dec1 = dec%0.12
+        self.Sumaprodukcji = whole+dec1
+        self.Sumaprodukcji= round( self.Sumaprodukcji,2)
         super(KurnikProdukcja, self).save(*args, **kwargs)
 
     def __str__(self):
