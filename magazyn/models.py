@@ -32,7 +32,7 @@ class KurnikProdukcja(models.Model):
         if dec<0.12:
             whole = whole
             dec1 = dec
-        if dec>=0.12 and dec <0.24:
+        elif dec>=0.12 and dec <0.24:
             whole = whole+1
             dec1 = dec%0.12
         elif dec>=0.24 and dec <0.36:
